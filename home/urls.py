@@ -1,7 +1,9 @@
-from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('sim.urls')),
+    path('', views.sign_in, name='sign_in'),
+    path('sign-out', views.sign_out, name='sign_out'),
+    path('auth-receiver', views.auth_receiver, name='auth_receiver'),
 ]
+
